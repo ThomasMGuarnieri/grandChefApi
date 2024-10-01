@@ -61,3 +61,16 @@
 6. Os testes vão executar com `php artisan test`
 
 ## Sobre o desenvolvimento
+Inicialmente decidi aplicar exatamente o que li na descrição do desafio, sem tentar incrementar a mais a tarefa, para que ela fosse simples e objetiva. Acredito que a ideia principal seja validar a forma como solucionei os desafios, e não uma aplicação completa.
+
+Utilizei os recursos do Laravel para garantir os dados necessários, como FormRequest e Responses, estes responsáveis por filtrar os dados que vem do request e responder de acordo com o que foi solicitado na estrutura correta.
+
+Optei por me inspirar em um padrão arquitetural chamado `Service Layer`, com mudanças devido a simplicidade do projeto. Meus services carregam apenas parte da lógica relacionada ao negócio deste software, evitando que esta lógica se espalhe pelo projeto. 
+
+Um pequeno detalhe foi a utilização do preço em centavos, buscando evitar futuros problemas com arredondamentos e contas.
+
+Todos os endpoints da aplicação ficam na pasta `endpoints` deste projeto, normalmente podem ser executados através de uma IDE.
+
+A documentação das rotas apresnetadas fica na URL: http://localhost/docs/api caso o projeto esteja rodando localmente. 
+
+

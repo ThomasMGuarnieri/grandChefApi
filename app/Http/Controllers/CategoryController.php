@@ -17,7 +17,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Retorna uma lista com todas as categorias
+     * Listar categorias
      */
     public function index()
     {
@@ -25,7 +25,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Insere uma nova categoria
+     * Criar nova categoria
      */
     public function store(StoreCategoryRequest $request)
     {
@@ -35,7 +35,7 @@ class CategoryController extends Controller
     }
 
     /**
-     * Remove uma categoria já cadastrada
+     * Remover categoria
      */
     public function destroy(Category $category)
     {

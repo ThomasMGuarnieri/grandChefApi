@@ -19,11 +19,17 @@ class OrderController extends Controller
         $this->orderService = new OrderService();
     }
 
+    /**
+     * Lista todos os pedidos
+     */
     public function index()
     {
         return OrderResource::collection(Order::all());
     }
 
+    /**
+     * Cria um novo pedido
+     */
     public function store(StoreOrderRequest $request)
     {
         DB::beginTransaction();
@@ -51,12 +57,18 @@ class OrderController extends Controller
         return response(new ExtendedOrderResource($order), 201);
     }
 
+    /**
+     * Exibe detalhes de um pedido
+     */
     public function show(Order $order)
     {
 
         return response(new ExtendedOrderResource($order));
     }
 
+    /**
+     * Atualiza o status de um pedido
+     */
     public function updateStatus(UpdateStatusOrderRequest $request, Order $order)
     {
         $this->orderService->updateStatus($order, $request->validated('status'));

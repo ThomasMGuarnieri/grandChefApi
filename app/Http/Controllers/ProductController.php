@@ -17,7 +17,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Lista todos os produtos cadastrados
+     * Lista produtos
      */
     public function index()
     {
@@ -25,7 +25,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Insere um novo produto
+     * Cria novo produto
      */
     public function store(StoreProductRequest $request)
     {
@@ -39,7 +39,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Remove um produto cadastrado
+     * Remove produto
      */
     public function destroy(Product $product)
     {
