@@ -1,0 +1,19 @@
+### POST Cria uma nova categoria
+POST http://localhost/api/categories
+Content-Type: application/json
+Accept: application/json
+
+{
+    "nome": "Bebidas"
+}
+###
+
+### GET lista todas as categorias
+GET http://localhost/api/categories
+Accept: application/json
+###
+
+### GET busca o menu paginado
+GET http://localhost/api/menus
+Accept: application/json
+###

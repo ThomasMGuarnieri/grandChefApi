@@ -1,0 +1,17 @@
+### POST Cria um novo produto
+POST http://localhost/api/products
+Content-Type: application/json
+Accept: application/json
+
+{
+    "categoria_id": 1,
+    "nome": "Água",
+    "preco": 3.50
+}
+
+### GET lista todos os produtos criados
+GET http://localhost/api/products
+Accept: application/json
+###
+
+

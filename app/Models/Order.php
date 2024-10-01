@@ -27,4 +27,9 @@ class Order extends Model
     {
         return $this->hasMany(ProductOrder::class);
     }
+
+    public function getTotal()
+    {
+        return $this->productOrders()->sum('price');
+    }
 }

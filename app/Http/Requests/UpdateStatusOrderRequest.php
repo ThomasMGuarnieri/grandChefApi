@@ -2,11 +2,12 @@
 
 namespace App\Http\Requests;
 
+use App\Enums\OrderStatusEnum;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class StoreCategoryRequest extends FormRequest
+class UpdateStatusOrderRequest extends FormRequest
 {
-
     public function authorize(): bool
     {
         return true;
@@ -15,7 +16,7 @@ class StoreCategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'nome' => 'required|string|max:255|unique:categories,name',
+            'status' => ['required', Rule::enum(OrderStatusEnum::class)]
         ];
     }
 }

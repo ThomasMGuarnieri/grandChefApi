@@ -3,64 +3,48 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreProductRequest;
-use App\Http\Requests\UpdateProductRequest;
+use App\Http\Resources\Product\ProductResource;
 use App\Models\Product;
+use App\Services\ProductService;
 
 class ProductController extends Controller
 {
+    private ProductService $productService;
+
+    public function __construct()
+    {
+        $this->productService = new ProductService();
+    }
+
     /**
-     * Display a listing of the resource.
+     * Lista todos os produtos cadastrados
      */
     public function index()
     {
-        //
+        return ProductResource::collection(Product::all());
     }
 
     /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
+     * Insere um novo produto
      */
     public function store(StoreProductRequest $request)
     {
-        //
+        $this->productService->create(
+            $request->validated('preco'),
+            $request->validated('nome'),
+            $request->validated('categoria_id')
+        );
+
+        return response(status: 204);
     }
 
     /**
-     * Display the specified resource.
-     */
-    public function show(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Product $product)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateProductRequest $request, Product $product)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
+     * Remove um produto cadastrado
      */
     public function destroy(Product $product)
     {
-        //
+        $this->productService->delete($product);
+
+        return response(status: 204);
     }
 }

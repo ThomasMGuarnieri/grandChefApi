@@ -1,0 +1,41 @@
+### POST Cria um novo pedido
+POST http://localhost/api/orders
+Content-Type: application/json
+Accept: application/json
+
+{
+    "produtos": [
+        {
+            "produto_id": 1,
+            "quantidade": 2,
+            "preco": 3.50
+        },
+        {
+            "produto_id": 1,
+            "quantidade": 1,
+            "preco": 2.50
+        }
+    ]
+}
+###
+
+### GET lista todos os pedidos
+GET http://localhost/api/orders
+Accept: application/json
+###
+
+### GET lista um único pedido
+GET http://localhost/api/orders/1
+Accept: application/json
+###
+
+### PATCH atualiza o status de um pedido
+PATCH http://localhost/api/orders/4
+Content-Type: application/json
+Accept: application/json
+
+{
+    "status": "concluido"
+}
+###
+
