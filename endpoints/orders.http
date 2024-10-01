@@ -6,12 +6,12 @@ Accept: application/json
 {
     "produtos": [
         {
-            "produto_id": 1,
+            "produto_id": 2,
             "quantidade": 2,
             "preco": 3.50
         },
         {
-            "produto_id": 1,
+            "produto_id": 2,
             "quantidade": 1,
             "preco": 2.50
         }

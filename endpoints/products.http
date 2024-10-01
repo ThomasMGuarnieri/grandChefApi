@@ -4,7 +4,7 @@ Content-Type: application/json
 Accept: application/json
 
 {
-    "categoria_id": 1,
+    "categoria_id": 3,
     "nome": "Água",
     "preco": 3.50
 }
